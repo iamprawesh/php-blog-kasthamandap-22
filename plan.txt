@@ -1,0 +1,25 @@
+1 - CREATING a database 'blog' with table with 'user' 
+    having fields (name,email,password)
+
+2 - CREATING a signup and login page in html with the help of bootstrap
+
+3 - Validating form with the help of php
+
+4 - signup functionality (Inserting data to server)
+    A SIGNUP
+        1 - When users click on Submit Button
+            a - if request post 
+            b - validation 
+            c - check if email already exist on table
+            d - if already exists : Email ALready exist
+            e - if not save data in table : id,name, email,password
+            f - Redirect user on login page
+5 -  login
+    
+    1 - When users click on Login Button 
+        a - If request post
+        b - validation
+        c - if email not exists throw : Invalid Credentials
+        d - if email exists then check password
+        e - echo "Login SuccessFul;
+        f - navigate to dashboard
