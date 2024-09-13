@@ -24,6 +24,8 @@ include("session_check.php");
 
     <a class="btn btn-info text-white" href="category/view.php">View Category</a>
     <a class="btn btn-info text-white" href="category/view.php">Students</a>
+    <a class="btn btn-info text-white" href="blog/insert.php">Posts</a>
+
 
 </body>
 

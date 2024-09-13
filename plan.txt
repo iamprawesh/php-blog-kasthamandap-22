@@ -23,3 +23,14 @@
         d - if email exists then check password
         e - echo "Login SuccessFul;
         f - navigate to dashboard
+
+
+CREATE TABLE posts (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    title VARCHAR(255) NOT NULL,
+    description TEXT,
+    image_url VARCHAR(255),
+    userid INT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (userid) REFERENCES users(id) 
+);
