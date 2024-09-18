@@ -9,9 +9,11 @@ include("../session_check.php");
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $title = $_POST['title'];
     $description = $_POST['description'];
+    $categoryId = $_POST['category'];
     $userid = $_SESSION['id'];
     $uploadDir = '../uploads/'; 
 
+    echo $categoryId;
     // Handle file upload
     if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
         $image = $_FILES['image'];
@@ -59,6 +61,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         <label for="description">Description:</label>
         <textarea name="description" required></textarea><br><br>
+
+        <label for="description">Select category:</label>
+
+        <select name="category" id="">
+            <option value="" disabled>Select Category</option>
+            <?php
+                $sql = "select * from category";
+                $result = mysqli_query($conn,$sql);
+                if($result){
+                    while($row = mysqli_fetch_assoc($result)){
+                        // echo "<br>";
+                        $catname = $row["name"];
+                        $catid = $row["id"];
+                        echo "
+                            <option value='$catid'>$catname</option>
+                        ";
+
+                    }
+                }
+            ?>
+        </select><br>
+        <br>
 
         <label for="image">Upload Image:</label>
         <input type="file" name="image" accept="image/*"><br><br>
