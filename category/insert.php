@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
-                <input name="cat_name" type="text" class="form-control">
+                <input name="cat_name" type="text" class="form-control" id="exampleInputEmail1">
             </div>
             <button type="submit" class="btn btn-primary">Save Category</button>
         </form>

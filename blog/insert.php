@@ -7,7 +7,7 @@ include("../session_check.php");
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $title = $_POST['title'];
+    $title = $_POST['title01'];
     $description = $_POST['description'];
     $categoryId = $_POST['category'];
     $userid = $_SESSION['id'];
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     
 
         if (move_uploaded_file($imageTmpName, $imagePath)) {
-            $sql = "INSERT INTO posts (title, description, userid, image_url) VALUES ('$title', '$description', $userid, '$imagePath')";
+            $sql = "INSERT INTO posts (title, description, userid,categoryid, image_url) VALUES ('$title', '$description', $userid,$ca '$imagePath')";
             $result = mysqli_query($conn, $sql); // returns True if data is inserted
 
             if ($result === TRUE) {
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h2>Create a New Blog Post</h2>
     <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="POST" enctype="multipart/form-data">
         <label for="title">Title:</label>
-        <input type="text" name="title" required><br><br>
+        <input type="text" name="title01" required><br><br>
 
         <label for="description">Description:</label>
         <textarea name="description" required></textarea><br><br>
