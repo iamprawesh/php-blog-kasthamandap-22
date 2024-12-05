@@ -10,26 +10,33 @@ $nameErr = "";
 $name = "";
 $hasError = false;
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if(empty($_POST["cat_name"])){
-        $hasError = true;
-        $nameErr = "Name is Required";
-    } else {
-        $nameErr = "";
-        $name = $_POST["cat_name"];
-    }
-    if(!$hasError){
-        // insert into database
-        $sql = "insert into category(name) values('$name')";
+    // if(empty($_POST["cat_name"])){
+    //     $hasError = true;
+    //     $nameErr = "Name is Required";
+    // } else {
+    //     $nameErr = "";
+    //     $name = $_POST["cat_name"];
+    // }
+    echo $_POST["cat_name"];
+    echo "<br>";
+    echo $_POST["cat_email"];
+    echo "<br>";
+    echo $_POST["cat_msg"];
 
-        $result = mysqli_query($conn, $sql); // returns True if data is inserted
-        if ($result) {
-         // f - Redirect user on view
-        //   header('Location: view.php?created=true');
-          header('Location: view.php');
-        //   echo "Item Inserted Successfully ";
 
-        }
-    }
+    // if(!$hasError){
+    //     // insert into database
+    //     $sql = "insert into category(name) values('$name')";
+
+    //     $result = mysqli_query($conn, $sql); // returns True if data is inserted
+    //     if ($result) {
+    //      // f - Redirect user on view
+    //     //   header('Location: view.php?created=true');
+    //     //   header('Location: view.php');
+    //     //   echo "Item Inserted Successfully ";
+
+    //     }
+    // }
 }
 
 ?>
@@ -71,6 +78,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
                 <input name="cat_name" type="text" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">email</label>
+                <input name="cat_email" type="text" class="form-control" id="exampleInputEmail1">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">msg</label>
+                <input name="cat_msg" type="text" class="form-control" id="exampleInputEmail1">
             </div>
             <button type="submit" class="btn btn-primary">Save Category</button>
         </form>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <p style="background-color: aqua;">This is P Tag</p>
+    <button class="btn1">Hide H1</button>
+    <button class="btn2">Hide H2</button>
+    <button class="btn3">Hide H3</button>
+   <h1 class="testh1">Tag h1</h1>
+   <h2 class="testh2">TAG H2</h2>
+   <h3 class="testh2">TAG h3</h3>
+   <script>
+        $(document).ready(function(){
+            // $("p").dblclick(function(){
+            //     $(this).hide();
+            // })
+            $("p").mouseleave(function(){
+                alert("Bye Bye")
+            })
+            $("p").mouseenter(function(){
+                alert("Hi")
+            })
+        })
+        $(document).ready(function(){
+            $(".btn1").click(function(){
+                $(".testh1").slideToggle();
+            })
+        })
+        $(document).ready(function(){
+            $(".btn2").click(function(){
+                $(".testh2").slideToggle();
+            })
+        })
+        $(document).ready(function(){
+            $(".btn3").click(function(){
+                $(".testh3").fadeToggle();
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show/Hide Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #text {
+            display: none; /* Start hidden */
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <button id="toggleButton">Show Text</button>
+    <p id="text">This is a simple paragraph that can be shown or hidden.</p>
+
+    <script>
+        $(document).ready(function() {
+            $('#toggleButton').click(function() {
+                $('#text').toggle(); // Toggle visibility of the paragraph
+                // Change button text using an if-else statement
+                 if ($('#text').is(':visible')) {
+                    $(this).text('Hide Text');
+                } else {
+                    $(this).text('Show Text');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+hambrolaptop/
+├── connection.php             # Database connection
+├── admin_signup.php           # Admin signup
+├── admin_login.php            # Admin login
+├── admin_dashboard.php        # Admin dashboard
+├── user_signup.php            # User signup
+├── user_login.php             # User login
+├── user_dashboard.php         # User dashboard
+├── logout.php                 # Logout script
+
+
+
+CREATE DATABASE hambrolaptop;
+
+USE hambrolaptop;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,          -- Unique identifier for each user
+    full_name VARCHAR(100) NOT NULL,            -- Full name
+    email VARCHAR(100) NOT NULL UNIQUE,         -- Email (username)
+    password VARCHAR(255) NOT NULL,             -- Password (hashed)
+    role ENUM('admin', 'user') NOT NULL,        -- Role: 'admin' or 'user'
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP, -- Record creation timestamp
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP -- Update timestamp
+);

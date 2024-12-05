@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Practical</title>
+</head>
+<body>
+    <h1>REGEX</h1>
+    <script>
+        // check if the username must start with a string 
+        // followed by a number eg : 
+        // rams123 valid ram invalid
+
+
+
+        var username1 = "_12Ramshretsha12@g.co";
+        var username2 = "12Ramshretsha12@gmail.com";
+        var username3 = "Ramshretsha12@gmail.com";
+        console.log(isValidUserName(username1) +" username1 REGEX");
+        // console.log(isValidUserName(username11) +" username1 REGEX");
+        console.log(isValidUserName(username2) +" username2 REGEX");
+        console.log(isValidUserName(username3) +" username3 REGEX");
+        // write an regex for abcdefgh1 (letters and last only one digit) /^[a-zA-Z]+[0-9]$/
+
+        function isValidUserName(stringname){
+            // var regex= /^[a-zA-Z]/;
+            // var regex = /^[a-zA-Z]+[0-9]+$/
+            // var regex = /^[a-zA-Z]+[0-9]/;
+            var regex =/^[a-zA-Z]+@[a-zA-Z]+.[a-zA-Z]{2,}$/
+            return regex.test(stringname);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scrolling</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        section { height: 100vh; }
+        nav { position: fixed; top: 0; left: 0; background: #fff; }
+        nav a { margin: 10px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#section1">Section 1</a>
+        <a href="#section2">Section 2</a>
+        <a href="#section3">Section 3</a>
+    </nav>
+    <section id="section1" style="background: lightcoral;">Section 1</section>
+    <section id="section2" style="background: lightblue;">Section 2</section>
+    <section id="section3" style="background: lightgreen;">Section 3</section>
+
+    <script>
+$(document).ready(function() {
+    // This function runs when the DOM is fully loaded
+    $('nav a').click(function(event) {
+        // This function runs when a link in the navigation is clicked
+
+        event.preventDefault();
+        // Prevents the default behavior of the link (jumping to the section)
+
+        $('html, body').animate({
+            // Animate the scrolling of the HTML and body elements
+            scrollTop: $($(this).attr('href')).offset().top
+            // Set the scroll position to the top offset of the target section
+        }, 500);
+        // The scrolling animation lasts for 500 milliseconds
+    });
+});
+
+    </script>
+</body>
+</html>
